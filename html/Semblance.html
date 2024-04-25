@@ -7,22 +7,34 @@
   <style>
     /* Add your CSS styling here */
     .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+        max-width: 300px;
+        margin: 0 auto;
+        position: relative;
     }
-  
+
     .uploader {
-      margin: 0;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      max-width: 300px;
+        margin: 0;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
-  
-    .uploader input[type="submit"] {
-      margin-top: 10px;
+
+    #pdfFile {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #uploadForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
     }
   </style>
 
@@ -30,12 +42,16 @@
 <body>
 
 <div class="container">
-  <div class="uploader">
+
+    <img src="./DenseResearch_text_logo.png" alt="Logo" />
+
+    <div class="uploader">
    <form id="uploadForm" enctype="multipart/form-data">
      <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required />
-     <input type="submit" value="Upload PDF" />
+     <input type="submit" value="Run Program" />
    </form>
   </div>
+
 </div>
 
 <script>
