@@ -1,6 +1,8 @@
 # Semblance: PDF Summarizer
 DenseResearch™ talent pipeline
 
+This is phase 1 of a four-phase plan toward an AI model capable of producing consolidated research papers. A consolidated research paper in this way is equivalent to thousands of scientists reading millions of research papers and then conducting a meeting about all of the read research and describing a "state-of-the-union" sort of consolidated paper, saying where we are and where we are going with the research subject area.
+
 Semblance is an open-source project aimed at building a PDF summarizer. The goal is to provide users with a user-friendly web interface where they can upload PDF files, which will then be processed by an AI model to generate concise summaries.
 
 ## Features
