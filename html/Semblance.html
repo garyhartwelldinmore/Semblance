@@ -48,9 +48,7 @@
     <div class="uploader">
    <form id="uploadForm" enctype="multipart/form-data">
 
-     <input type="file" id="pdfFile" name="pdfFile" multiple required />
-
-     <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required />
+     <input type="file" id="Files" name="Files" multiple required />
 
      <input type="submit" value="Upload" />
    </form>
@@ -64,16 +62,16 @@
     e.preventDefault();
     
     var formData = new FormData(this);
-    var fileInput = document.getElementById('pdfFile');
+    var fileInput = document.getElementById('Files');
     
     if(fileInput.files.length === 0) {
-      alert('Please select a PDF file to upload.');
+      alert('Please select a file to upload.');
       return;
     }
     
     var file = fileInput.files[0];
     if(file.type !== 'application/pdf') {
-      alert('Please select a valid PDF file.');
+      alert('Please select valid files.');
       return;
     }
     
