@@ -7,50 +7,51 @@
   <style>
     /* Add your CSS styling here */
     .container {
-        max-width: 300px;
-        margin: 0 auto;
-        position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
     }
-
+  
     .uploader {
-        margin: 0;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+      width: 100%;
+      padding: 40px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-
+  
     #pdfFile {
-        width: 100%;
-        margin-bottom: 20px;
+      width: 100%;
+      margin-bottom: 20px;
     }
-
+  
     #uploadForm {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
+  
     img {
-        max-width: 100%;
-        height: auto;
-        top: 0;
-        left: 0;
+      max-width: 100%;
+      height: auto;
+      top: 0;
+      left: 0;
     }
   </style>
 
 </head>
+
 <body>
 
 <div class="container">
 
-   <img src="./DenseResearch_text_logo.png" alt="Logo" />
-
     <div class="uploader">
    <form id="uploadForm" enctype="multipart/form-data">
      
-     <input type="file" id="Files" name="Files" multiple required />
-
+    <img src="./DenseResearch_text_logo.png" alt="Logo" />
+     
+     <input type="file" id="pdfFile" name="pdfFile" multiple required />
      <input type="submit" value="Upload" />
+     
    </form>
   </div>
 
@@ -62,16 +63,16 @@
     e.preventDefault();
     
     var formData = new FormData(this);
-    var fileInput = document.getElementById('Files');
+    var fileInput = document.getElementById('pdfFile');
     
     if(fileInput.files.length === 0) {
-      alert('Please select a file to upload.');
+      alert('Please select a PDF file to upload.');
       return;
     }
     
     var file = fileInput.files[0];
     if(file.type !== 'application/pdf') {
-      alert('Please select valid files.');
+      alert('Please select a valid PDF file.');
       return;
     }
     
