@@ -103,12 +103,12 @@ module.exports = {
     },
     // 处理html
     plugins: [
-        // new EslintWebpackPlugin({
-        //     context: path.resolve(__dirname, "../src"),
-        //     exclude: "node_modules",
-        //     cache: true,
-        //     cacheLocation: path.resolve(__dirname, "../node_modules/.cache/.eslintcache"),
-        // }),
+         // 其他插件保持不变
+         new EslintWebpackPlugin({
+            context: path.resolve(__dirname, '../src'),
+            exclude: '/node_modules/',
+            cache: true, // 启用缓存，提高构建性能
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
         }),

@@ -42,6 +42,7 @@ components/**/*.jsx
 !components/**/__tests__/**/*.js.snap
 /.history
 *.tmp
+.eslintcache
 
 # Docs templates
 site/theme/template/Color/ColorPicker.jsx
