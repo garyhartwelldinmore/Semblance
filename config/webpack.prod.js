@@ -1,5 +1,4 @@
 const path = require("path");
-const EslintWebpackPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
@@ -27,7 +26,7 @@ const getStyleLoaders = (pre) => {
 };
 
 module.exports = {
-    entry: "./src/main.js",
+    entry: "./src/main.tsx",
     output: {
         path: path.resolve(__dirname, "../dist"),
         filename: "static/js/[name].[contenthash:10].js",
@@ -79,16 +78,15 @@ module.exports = {
                     cacheCompression: false,
                 },
             },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            },
         ],
     },
     // 处理html
     plugins: [
-        // new EslintWebpackPlugin({
-        //     context: path.resolve(__dirname, "../src"),
-        //     exclude: "node_modules",
-        //     cache: true,
-        //     cacheLocation: path.resolve(__dirname, "../node_modules/.cache/.eslintcache"),
-        // }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
         }),

@@ -1,5 +1,4 @@
 const path = require("path");
-const EslintWebpackPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
@@ -44,7 +43,7 @@ const getStyleLoaders = (pre) => {
 };
 
 module.exports = {
-    entry: "./src/main.js",
+    entry: "./src/main.tsx",
     output: {
         path: isProduction ? path.resolve(__dirname, "../dist") : undefined,
         filename: isProduction ? "static/js/[name].[contenthash:10].js" : "static/js/[name].js",
@@ -98,17 +97,16 @@ module.exports = {
                         !isProduction && "react-refresh/babel", // 激活js的HMR
                     ].filter(Boolean),
                 },
-            }
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            },
         ],
     },
     // 处理html
     plugins: [
-         // 其他插件保持不变
-         new EslintWebpackPlugin({
-            context: path.resolve(__dirname, '../src'),
-            exclude: '/node_modules/',
-            cache: true, // 启用缓存，提高构建性能
-        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
         }),
@@ -198,7 +196,7 @@ module.exports = {
     // webpack解析模块加载选项
     resolve: {
         // 自动补全文件扩展名
-        extensions: [".jsx", ".js", ".json"],
+        extensions: [".tsx", ".ts",".jsx", ".js", ".json"],
     },
     devServer: {
         host: "localhost",
