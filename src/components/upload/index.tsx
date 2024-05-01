@@ -3,12 +3,13 @@
  * @Autor: jiayinchu
  * @Date: 2024-05-01 09:07:21
  * @LastEditors: jiayinchu
- * @LastEditTime: 2024-05-01 09:18:12
+ * @LastEditTime: 2024-05-01 17:51:06
  */
 import React from 'react';
 import { InboxOutlined } from '@ant-design/icons';
 import type { UploadProps, UploadFile } from 'antd';
 import { message, Upload } from 'antd';
+import "./index.less";
 
 const { Dragger } = Upload;
 
@@ -17,6 +18,7 @@ const props: UploadProps = {
     multiple: true,
     action: 'https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload',
     onChange(info: { file: UploadFile; fileList: UploadFile[] }) {
+        console.log("0000000000000000", info);
         const { status } = info.file;
         if (status !== 'uploading') {
             console.log(info.file, info.fileList);
@@ -32,17 +34,19 @@ const props: UploadProps = {
     },
 };
 
-const App: React.FC = () => (
-    <Dragger {...props}>
-        <p className="ant-upload-drag-icon">
-            <InboxOutlined />
-        </p>
-        <p className="ant-upload-text">Click or drag file to this area to upload</p>
-        <p className="ant-upload-hint">
-            Support for a single or bulk upload. Strictly prohibited from uploading company data or other
-            banned files.
-        </p>
-    </Dragger>
-);
+const App: React.FC = () => {
+    return <div className='container'>
+        <Dragger {...props}>
+            <p className="ant-upload-drag-icon">
+                <InboxOutlined />
+            </p>
+            <p className="ant-upload-text">Click or drag file to this area to upload</p>
+            <p className="ant-upload-hint">
+                Support for a single or bulk upload. Strictly prohibited from uploading company data or other
+                banned files.
+            </p>
+        </Dragger>
+    </div>
+};
 
 export default App;

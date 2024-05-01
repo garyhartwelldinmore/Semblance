@@ -3,7 +3,7 @@
  * @Autor: jiayinchu
  * @Date: 2024-05-01 09:07:58
  * @LastEditors: jiayinchu
- * @LastEditTime: 2024-05-01 13:53:41
+ * @LastEditTime: 2024-05-01 14:57:07
  */
 import React from 'react';
 import { Flex, Layout } from 'antd';
@@ -16,7 +16,7 @@ const headerStyle: React.CSSProperties = {
     height: 64,
     paddingInline: 48,
     lineHeight: '64px',
-    backgroundColor: '#4096ff',
+    backgroundColor: '#fff',
 };
 
 const contentStyle: React.CSSProperties = {
@@ -31,7 +31,7 @@ const contentStyle: React.CSSProperties = {
 const footerStyle: React.CSSProperties = {
     textAlign: 'center',
     color: '#fff',
-    backgroundColor: '#4096ff',
+    // backgroundColor: '#4096ff',
     height: 64,
 };
 const layoutStyle = {
