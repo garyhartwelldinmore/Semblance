@@ -5,6 +5,7 @@ const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const WebpackBar = require('webpackbar');
 
 // 返回处理样式loader函数
 const getStyleLoaders = (pre) => {
@@ -106,6 +107,7 @@ module.exports = {
                 },
             ],
         }),
+        new WebpackBar(),
     ],
     mode: "production",
     devtool: "source-map",

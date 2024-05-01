@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const WebpackBar = require('webpackbar');
 
 // 返回处理样式loader函数
 const getStyleLoaders = (pre) => {
@@ -89,6 +90,7 @@ module.exports = {
             template: path.resolve(__dirname, "../public/index.html"),
         }),
         new ReactRefreshWebpackPlugin(), // 激活js的HMR
+        new WebpackBar(),
     ],
     mode: "development",
     devtool: "cheap-module-source-map",
