@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const WebpackBar = require('webpackbar');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 // 返回处理样式loader函数
 const getStyleLoaders = (pre) => {
@@ -86,6 +87,13 @@ module.exports = {
     },
     // 处理html
     plugins: [
+        new ESLintPlugin({
+            context: path.resolve(__dirname, "../src"),
+            exclude: "node_modules",
+            cache: true,
+            cacheLocation: path.resolve(__dirname, "../node_modules/.cache/.eslintcache"),
+            fix: true, // 自动修复可以修复的问题
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
         }),

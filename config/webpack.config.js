@@ -7,6 +7,7 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const WebpackBar = require("webpackbar");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 // 获取cross-env定义的环境变量
 const isProduction = process.env.NODE_ENV === "production";
@@ -108,6 +109,13 @@ module.exports = {
     },
     // 处理html
     plugins: [
+        new ESLintPlugin({
+            context: path.resolve(__dirname, "../src"),
+            exclude: "node_modules",
+            cache: true,
+            cacheLocation: path.resolve(__dirname, "../node_modules/.cache/.eslintcache"),
+            fix: true, // 自动修复可以修复的问题
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
         }),
@@ -198,7 +206,7 @@ module.exports = {
     // webpack解析模块加载选项
     resolve: {
         // 自动补全文件扩展名
-        extensions: [".tsx", ".ts",".jsx", ".js", ".json"],
+        extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
     },
     devServer: {
         host: "localhost",
