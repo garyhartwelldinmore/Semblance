@@ -118,7 +118,8 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
-            filename: 'index.hbs'
+            filename: isProduction ? 'index.hbs' : 'index.html'
+            // filename: 'index.hbs'
         }),
         isProduction &&
         new MiniCssExtractPlugin({
@@ -126,18 +127,18 @@ module.exports = {
             chunkFilename: "static/css/[name].[contenthash:10].chunk.css",
         }),
         isProduction &&
-        // new CopyPlugin({
-        //     patterns: [
-        //         {
-        //             from: path.resolve(__dirname, "../public"),
-        //             to: path.resolve(__dirname, "../../views"),
-        //             globOptions: {
-        //                 // 忽略index.html文件
-        //                 ignore: ["index.html"],
-        //             },
-        //         },
-        //     ],
-        // }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, "../public"),
+                    to: path.resolve(__dirname, "../../views"),
+                    globOptions: {
+                        // 忽略index.html文件
+                        ignore: ["index.html"],
+                    },
+                },
+            ],
+        }),
         !isProduction && new ReactRefreshWebpackPlugin(),
         new WebpackBar()
     ].filter(Boolean),
