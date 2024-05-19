@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.6046f2036e.css","mappings":"AAAA,WAEI,aAAc,CACd,WAAJ","sources":["webpack://semblance/./src/components/upload/index.less"],"sourcesContent":[".container{\n    // 居中显示\n    margin: 0 auto;\n    width: 400px;\n}\n\n@primary-color: #1DA57A;"],"names":[],"sourceRoot":""}

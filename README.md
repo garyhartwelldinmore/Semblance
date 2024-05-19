@@ -1,81 +1,73 @@
-# Semblance: PDF Summarizer
-DenseResearch™ talent pipeline
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-Upload multiple files to server, AI model pulls files from server and create an output file
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-This is phase 1 of a four-phase plan toward an AI model capable of producing consolidated research papers. A consolidated research paper in this way is equivalent to thousands of scientists reading millions of research papers and then conducting a meeting about all of the read research and describing a "state-of-the-union" sort of consolidated paper, saying where we are and where we are going with the research subject area.
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-Semblance is an open-source project aimed at building a PDF summarizer. The goal is to provide users with a user-friendly web interface where they can upload PDF files, which will then be processed by an AI model to generate concise summaries.
+## Description
 
-## Features
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-- **User Interface (UI)**:
-  - A clean and intuitive UI for uploading PDF files.
-  - Styling using HTML and CSS.
-  - JavaScript to handle form submission and interaction.
+## Installation
 
-- **Server Backend**:
-  - An Express.js server to handle file uploads.
-  - Integration with an AI model (PDF summarization).
+```bash
+$ yarn install
+```
 
-- **AI Model**:
-  - The AI model (not included in this repository) should read uploaded PDFs and generate summaries.
-  - You can use existing NLP libraries or build a custom model.
+## Running the app
 
-## Getting Started
+```bash
+# development
+$ yarn run start
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/garyhartwelldinmore/Semblance.git
-   cd Semblance
-   ```
+# watch mode
+$ yarn run start:dev
 
-2. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+# production mode
+$ yarn run start:prod
+```
 
-3. **Run the Server**:
-   ```bash
-   node server.js
-   ```
+## Test
 
-4. **Access the UI**:
-   Open your browser and navigate to `http://localhost:3000`.
+```bash
+# unit tests
+$ yarn run test
 
-## Project Structure
+# e2e tests
+$ yarn run test:e2e
 
-- `index.html`: The main HTML file containing the UI.
-- `style.css`: CSS file for styling the UI.
-- `server.js`: Express.js server handling file uploads.
-- `semblance.py`: Placeholder for the AI model (you need to implement this).
+# test coverage
+$ yarn run test:cov
+```
 
-## Usage
+## Support
 
-1. **Upload PDFs**:
-   - Visit the UI in your browser.
-   - Click the "Choose File" button to select a PDF.
-   - Click "Upload PDF."
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-2. **Server-side Handling**:
-   - The server receives the uploaded PDF.
-   - It should save the file temporarily.
-   - Spawn a child process to run `semblance.py`.
+## Stay in touch
 
-3. **AI Model (summarize_pdf.py)**:
-   - Read the PDF content.
-   - Generate a summary (e.g., using NLP techniques).
-   - Print the summary to stdout.
-
-4. **Display Summary**:
-   - The server captures the summary from stdout.
-   - Send the summary back to the client-side JavaScript.
-   - Display the summary in a separate popup window.
-
-## Contributing
-
-Contributions are welcome! Feel free to submit pull requests or open issues.
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Nest is [MIT licensed](LICENSE).

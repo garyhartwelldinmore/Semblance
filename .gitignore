@@ -1,70 +1,35 @@
-*.iml
-.idea/
-.ipr
-.iws
-*~
-~*
-*.diff
-*.patch
-*.bak
-.DS_Store
-Thumbs.db
-.project
-.*proj
-.svn/
-*.swp
-*.swo
+# compiled output
+/dist
+/node_modules
+
+# Logs
+logs
 *.log
-*.log.*
-*.json.gzip
-node_modules/
-.buildpath
-.settings
-npm-debug.log
-nohup.out
-_site
-_data
-dist
-report.html
-/lib
-/es
-elasticsearch-*
-config/base.yaml
-/.vscode/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# Tests
 /coverage
-yarn.lock
-package-lock.json
-pnpm-lock.yaml
-.pnpm-debug.log
-components/**/*.js
-components/**/*.jsx
-!components/**/__tests__/**/*.js
-!components/**/__tests__/**/*.js.snap
-/.history
-*.tmp
-.eslintcache
+/.nyc_output
 
-# Docs templates
-site/theme/template/Color/ColorPicker.jsx
-site/theme/template/IconDisplay/*.js
-site/theme/template/IconDisplay/*.jsx
-site/theme/template/IconDisplay/fields.js
-site/theme/template/Home/**/*.jsx
-site/theme/template/utils.jsx
-site/theme/template/Layout/Footer.jsx
-site/theme/template/Layout/Header/**/*.jsx
-site/theme/template/Layout/SiteContext.jsx
-site/theme/template/Content/Article.jsx
-site/theme/template/Content/EditButton.jsx
-site/theme/template/Resources/*.jsx
-site/theme/template/Resources/**/*.jsx
-site/theme/template/NotFound.jsx
-scripts/previewEditor/index.html
-components/version/version.tsx
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# Image snapshot diff
-__diff_output__/
-__image_snapshots__/
-/jest-stare
-/imageSnapshots
-/imageDiffSnapshots
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
