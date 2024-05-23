@@ -11,7 +11,7 @@ export class UploadController {
     @Post('file')
     @UseInterceptors(FileInterceptor('file', {
         storage: diskStorage({
-            destination: './uploads', // 文件保存的路径
+            destination: './uploads', // save file in the uploads folder
             filename: (req, file, callback) => {
                 const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
                 const ext = extname(file.originalname);
