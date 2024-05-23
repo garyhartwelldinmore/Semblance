@@ -16,7 +16,7 @@ const { Dragger } = Upload;
 const props: UploadProps = {
     name: 'file',
     multiple: true,
-    action: 'https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload',
+    action: '/upload/file',
     onChange(info: { file: UploadFile; fileList: UploadFile[] }) {
         console.log("0000000000000000", info);
         const { status } = info.file;
