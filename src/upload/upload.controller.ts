@@ -20,8 +20,8 @@ export class UploadController {
             },
         }),
         fileFilter: (req, file, callback) => {
-            if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
-                return callback(new Error('Only image files are allowed!'), false);
+            if (!file.originalname.match(/\.(xlsx|xls|docx|doc)$/)) {
+                return callback(new Error('Only excel and word files are allowed!'), false);
             }
             callback(null, true);
         },
