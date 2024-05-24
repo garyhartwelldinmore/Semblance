@@ -26,7 +26,9 @@ export class UploadController {
             callback(null, true);
         },
     }))
-    uploadFile(@UploadedFile() file: Express.Multer.File) {
-        return this.uploadService.uploadFile(file);
+    async uploadFile(@UploadedFile() file: Express.Multer.File) {
+        const outputPdfPath = `./uploads/${file.filename.split('.')[0]}.pdf`;
+        await this.uploadService.transformExcelToPdf(file.path, outputPdfPath);
+        return { message: 'File converted successfully', pdfPath: outputPdfPath };
     }
 }
