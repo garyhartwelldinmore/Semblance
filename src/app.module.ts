@@ -6,7 +6,7 @@ import { MONGO_URI } from './utils';
 import { UploadModule } from './upload/upload.module';
 @Module({
     imports: [
-        MongooseModule.forRoot(MONGO_URI),
+        // MongooseModule.forRoot(MONGO_URI),
         UploadModule,
     ],
     controllers: [AppController],
